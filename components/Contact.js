@@ -1,0 +1,128 @@
+"use client";
+
+import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { useState } from "react";
+
+export default function Contact() {
+    const [name, setName] = useState();
+    const [email, setEmail] = useState();
+    const [phone, setPhone] = useState();
+    const [message, setMessage] = useState();
+
+    return (
+      <section
+        id="contact"
+        className="relative w-full py-20 bg-gradient-to-b from-gray-50 to-white text-black"
+      >
+        <div className="max-w-6xl mx-auto px-6">
+          {/* Heading */}
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600">
+              Get In Touch
+            </h2>
+            <p className="text-gray-600 text-lg md:text-xl mt-3 max-w-2xl mx-auto">
+              Ready to transform your business? Let’s discuss your next project.
+            </p>
+          </div>
+
+          {/* Grid Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {/* Contact Info */}
+            <div className="space-y-6">
+              <div className="bg-white border border-gray-200 rounded-2xl p-8 flex flex-col gap-10">
+                {[
+                  {
+                    icon: <Mail className="h-6 w-6 text-gray-500" />,
+                    title: "Email",
+                    desc: "zebriustechnologies@gmail.com",
+                  },
+                  {
+                    icon: <Phone className="h-6 w-6 text-gray-500" />,
+                    title: "Phone",
+                    desc: "+91 7980286979",
+                  },
+                  {
+                    icon: <MapPin className="h-6 w-6 text-gray-500" />,
+                    title: "Address",
+                    desc: "Shop no-302(A), Grand Bazaar, Nuhata, Cuttack, Odisha",
+                  },
+                  {
+                    icon: <Clock className="h-6 w-6 text-gray-500" />,
+                    title: "Business Hours",
+                    desc: "Mon - Sat: 10:00 AM - 7:00 PM",
+                  },
+                ].map(({ icon, title, desc }, i) => (
+                  <div
+                    key={i}
+                    className="flex items-start gap-4 wrap-break-words overflow-hidden"
+                  >
+                    <div className="p-3 bg-gray-100 rounded-xl shrink-0">
+                      {icon}
+                    </div>
+                    <div className="min-w-0">
+                      <h3 className="font-semibold text-lg">{title}</h3>
+                      <p className="text-gray-600 break-words">{desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Contact Form */}
+            <form className="bg-white border border-gray-200 rounded-2xl p-8 space-y-5">
+              <div>
+                <label className="block text-gray-700 mb-2 font-medium">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  placeholder="Enter your name"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-800 transition-all"
+                />
+              </div>
+
+              <div>
+                <label className="block text-gray-700 mb-2 font-medium">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-800 transition-all"
+                />
+              </div>
+
+              <div>
+                <label className="block text-gray-700 mb-2 font-medium">
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  placeholder="Enter your phone number"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-800 transition-all"
+                />
+              </div>
+
+              <div>
+                <label className="block text-gray-700 mb-2 font-medium">
+                  Message
+                </label>
+                <textarea
+                  rows={4}
+                  placeholder="Write your message..."
+                  className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-800 transition-all"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                className="w-full text-white bg-black font-semibold py-3 rounded-xl hover:opacity-90 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    );
+}   
