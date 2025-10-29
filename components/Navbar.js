@@ -20,7 +20,7 @@ export default function Navbar() {
             href="/"
             className="text-2xl font-semibold text-white tracking-wide"
           >
-            Zebrious Tech.
+            Zebrius Tech.
           </Link>
 
           {/* Desktop Links */}

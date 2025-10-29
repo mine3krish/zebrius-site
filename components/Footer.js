@@ -55,7 +55,7 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-sm text-gray-500">
-            © {new Date().getFullYear()} Zebrious Technologies Pvt Ltd. All rights reserved.
+            ©{new Date().getFullYear()} Zebrius Technologies Pvt Ltd. All rights reserved.
           </p>
 
           {/* Social Icons */}

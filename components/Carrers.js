@@ -1,3 +1,5 @@
+"use client";
+
 import {
   LucideCpu,
   LucideMail,
@@ -6,13 +8,35 @@ import {
   LucideSprout,
 } from "lucide-react";
 import SpotlightCard from "./Spotlight";
+import { motion } from "framer-motion";
 
 export default function Careers() {
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        delay: i * 0.15, // stagger
+        ease: "easeOut",
+      },
+    }),
+  };
+
   return (
-    <section className="bg-linear-to-b from-gray-50 to-white text-black py-20 px-6" id="careers">
+    <section
+      className="bg-gradient-to-b from-gray-50 to-white text-black py-20 px-6"
+      id="careers"
+    >
       <div className="max-w-6xl mx-auto flex flex-col gap-6 text-center lg:text-left">
         {/* Header */}
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           <h3 className="text-gray-500 font-semibold text-lg uppercase tracking-wide">
             Join Our Team
           </h3>
@@ -24,7 +48,7 @@ export default function Careers() {
             passionate about technology and innovation. Grow your career with a
             team that values creativity, balance, and continuous learning.
           </p>
-        </div>
+        </motion.div>
 
         {/* Highlights */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-12">
@@ -50,26 +74,40 @@ export default function Careers() {
               desc: "Clear advancement paths and leadership opportunities for every role.",
             },
           ].map((item, i) => (
-            <SpotlightCard
+            <motion.div
               key={i}
-              spotlightColor="#00000010"
-              className="bg-white border border-gray-200 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center gap-6 p-6 hover:shadow-lg transition-all"
+              custom={i}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
             >
-              <div className="p-3 rounded-2xl border border-gray-300 bg-gray-50 mx-auto">
-                {item.icon}
-              </div>
-              <div>
-                <h3 className="font-bold text-lg mb-1">{item.title}</h3>
-                <p className="font-inter text-gray-600 text-sm leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
-            </SpotlightCard>
+              <SpotlightCard
+                spotlightColor="#00000010"
+                className="bg-white border border-gray-200 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center gap-6 p-6 hover:shadow-lg transition-all"
+              >
+                <div className="p-3 rounded-2xl border border-gray-300 bg-gray-50 mx-auto">
+                  {item.icon}
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg mb-1">{item.title}</h3>
+                  <p className="font-inter text-gray-600 text-sm leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              </SpotlightCard>
+            </motion.div>
           ))}
         </div>
 
         {/* Mail to Apply */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12"
+        >
           <p className="text-gray-500 text-lg md:text-xl font-medium tracking-wide">
             Mail us your resume:
           </p>
@@ -79,10 +117,10 @@ export default function Careers() {
           >
             <LucideMail className="h-6 w-6" />
             <span className="font-semibold text-lg md:text-xl tracking-wide">
-              jobs@zebrious.tech
+              jobs@zebrius.tech
             </span>
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
