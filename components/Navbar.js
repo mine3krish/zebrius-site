@@ -21,7 +21,7 @@ export default function Navbar() {
             href="/"
             className="text-2xl font-semibold text-white tracking-wide flex gap-3 items-center"
           >
-            <Image src={'/logo.png'} width={50} height={50}/>
+            <Image src={'/logo.png'} width={50} height={50} alt="Zebrius Technologies"/>
             Zebrius Tech.
           </Link>
 
