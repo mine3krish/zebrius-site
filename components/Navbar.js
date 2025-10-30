@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { LucideChevronRight, Menu, X } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,8 +19,9 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className="text-2xl font-semibold text-white tracking-wide"
+            className="text-2xl font-semibold text-white tracking-wide flex gap-3 items-center"
           >
+            <Image src={'/logo.png'} width={50} height={50}/>
             Zebrius Tech.
           </Link>
 
