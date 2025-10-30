@@ -26,7 +26,7 @@ export const metadata = {
     "startup solutions",
     "digital transformation",
   ],
-  authors: [{ name: "Zebrius Technologies" }],
+  authors: [{ name: "KTSHACX" }],
   creator: "KTSHACX",
   publisher: "KTSHACX",
   metadataBase: new URL("https://zebriustechnologies.com"),
