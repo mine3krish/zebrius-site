@@ -15,7 +15,7 @@ const inter = Inter({
 
 
 export const metadata = {
-  title: "Zebrius Tech | Smart Digital Solutions",
+  title: "Zebrius Technologies | Smart Digital Solutions",
   description:
     "Zebrius Tech is a modern software development agency helping startups and businesses build scalable, elegant, and high-performance digital products.",
   keywords: [

@@ -62,7 +62,7 @@ export default function Footer() {
           <div className="flex gap-4">
             {[
               { icon: Facebook, href: "#" },
-              { icon: Instagram, href: "#" },
+              { icon: Instagram, href: "https://instagram.com/zebriustechnologiespvtltd" },
               { icon: Linkedin, href: "https://linkedin.com/company/zebrius-technologies-pvt-ltd" },
               { icon: XIcon, href: "#" }
             ].map(({ icon: Icon, href }, index) => (
