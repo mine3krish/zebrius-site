@@ -1,6 +1,6 @@
 "use client";
 
-import { Facebook, Instagram, Linkedin, Github } from "lucide-react";
+import { Facebook, Instagram, Linkedin, XIcon } from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-bold text-white mb-3">Zebrious Tech.</h3>
+            <h3 className="text-2xl font-bold text-white mb-3">Zebrius Tech.</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
               Empowering businesses with modern technology solutions. We craft
               digital experiences that inspire innovation and growth.
@@ -42,7 +42,7 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-white mb-3">Contact Info</h4>
             <ul className="space-y-2 text-sm">
-              <li>Email: <span className="text-gray-300">zebriustechnologies@gmail.com</span></li>
+              <li>Email: <span className="text-gray-300">contact@zebriustechnologies.com</span></li>
               <li>Phone: <span className="text-gray-300">+91 7980286979</span></li>
               <li>Address: <span className="text-gray-300">Cuttack, Odisha</span></li>
             </ul>
@@ -63,8 +63,8 @@ export default function Footer() {
             {[
               { icon: Facebook, href: "#" },
               { icon: Instagram, href: "#" },
-              { icon: Linkedin, href: "#" },
-              { icon: Github, href: "#" },
+              { icon: Linkedin, href: "https://linkedin.com/company/zebrius-technologies-pvt-ltd" },
+              { icon: XIcon, href: "#" }
             ].map(({ icon: Icon, href }, index) => (
               <Link
                 key={index}

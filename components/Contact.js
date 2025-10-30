@@ -9,10 +9,47 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
+  const [status, setStatus] = useState({ type: "", message: "" });
+  const [loading, setLoading] = useState(false);
 
   const fadeUp = {
     hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
+  // handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatus({ type: "", message: "" });
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, phone, message }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        setStatus({ type: "success", message: "Message sent successfully!" });
+        setName("");
+        setEmail("");
+        setPhone("");
+        setMessage("");
+      } else {
+        setStatus({
+          type: "error",
+          message: data.error || "Failed to send. Try again later.",
+        });
+      }
+    } catch (err) {
+      setStatus({ type: "error", message: "Network error. Please try again." });
+    } finally {
+      setLoading(false);
+      setTimeout(() => setStatus({ type: "", message: "" }), 4000); // auto-clear after 4s
+    }
   };
 
   return (
@@ -51,7 +88,7 @@ export default function Contact() {
                 {
                   icon: <Mail className="h-6 w-6 text-gray-500" />,
                   title: "Email",
-                  desc: "zebriustechnologies@gmail.com",
+                  desc: "contact@zebriustechnologies.com",
                 },
                 {
                   icon: <Phone className="h-6 w-6 text-gray-500" />,
@@ -66,7 +103,7 @@ export default function Contact() {
                 {
                   icon: <Clock className="h-6 w-6 text-gray-500" />,
                   title: "Business Hours",
-                  desc: "Mon - Sat: 10:00 AM - 7:00 PM",
+                  desc: "Mon - Sat: 9:00 AM - 6:00 PM",
                 },
               ].map(({ icon, title, desc }, i) => (
                 <motion.div
@@ -90,12 +127,13 @@ export default function Contact() {
 
           {/* Contact Form */}
           <motion.form
+            onSubmit={handleSubmit}
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="bg-white border border-gray-200 rounded-2xl p-8 space-y-5"
+            className="bg-white border border-gray-200 rounded-2xl p-8 space-y-5 relative"
           >
             <div>
               <label className="block text-gray-700 mb-2 font-medium">Name</label>
@@ -103,6 +141,7 @@ export default function Contact() {
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
+                required
                 placeholder="Enter your name"
                 className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-800 transition-all"
               />
@@ -114,15 +153,14 @@ export default function Contact() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                required
                 placeholder="Enter your email"
                 className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-800 transition-all"
               />
             </div>
 
             <div>
-              <label className="block text-gray-700 mb-2 font-medium">
-                Phone Number
-              </label>
+              <label className="block text-gray-700 mb-2 font-medium">Phone Number</label>
               <input
                 type="tel"
                 value={phone}
@@ -138,17 +176,37 @@ export default function Contact() {
                 rows={4}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
+                required
                 placeholder="Write your message..."
                 className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-800 transition-all"
               ></textarea>
             </div>
 
+            {/* Submit button */}
             <button
               type="submit"
-              className="w-full text-white bg-black font-semibold py-3 rounded-xl hover:opacity-90 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200"
+              disabled={loading}
+              className={`w-full text-white font-semibold py-3 rounded-xl transition-all duration-200 ${
+                loading
+                  ? "bg-gray-500 cursor-not-allowed"
+                  : "bg-black hover:opacity-90 hover:scale-[1.01] active:scale-[0.99]"
+              }`}
             >
-              Send Message
+              {loading ? "Sending..." : "Send Message"}
             </button>
+
+            {/* Status message */}
+            {status.message && (
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className={`text-center mt-3 font-medium ${
+                  status.type === "success" ? "text-green-600" : "text-red-600"
+                }`}
+              >
+                {status.message}
+              </motion.p>
+            )}
           </motion.form>
         </div>
       </div>

@@ -117,7 +117,7 @@ export default function Careers() {
           >
             <LucideMail className="h-6 w-6" />
             <span className="font-semibold text-lg md:text-xl tracking-wide">
-              jobs@zebrius.tech
+              hr@zebriustechnologies.com
             </span>
           </a>
         </motion.div>
