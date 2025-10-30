@@ -118,7 +118,7 @@ export default function Contact() {
                   <div className="p-3 bg-gray-100 rounded-xl shrink-0">{icon}</div>
                   <div>
                     <h3 className="font-semibold text-lg">{title}</h3>
-                    <p className="text-gray-600 wrap-break-words">{desc}</p>
+                    <p className="text-gray-600 wrap-break-word break-all">{desc}</p>
                   </div>
                 </motion.div>
               ))}
