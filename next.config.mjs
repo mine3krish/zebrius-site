@@ -1,6 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      {
+        source: '/(.*)',
+        destination: 'https://zebriustechnologies.com/$1',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

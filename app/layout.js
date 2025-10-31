@@ -29,6 +29,10 @@ export const metadata = {
     "startup solutions",
     "digital transformation",
   ],
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
+  },
   authors: [{ name: "KTSHACX" }],
   creator: "KTSHACX",
   publisher: "KTSHACX",
@@ -39,6 +43,14 @@ export const metadata = {
       "Empowering startups and businesses with innovative web and app solutions.",
     url: "https://zebriustechnologies.com",
     siteName: "Zebrius Technologies",
+        images: [
+      {
+        url: "https://zebriustechnologies.com/icon.png",
+        width: 512,
+        height: 512,
+        alt: "Zebrius Technologies Logo",
+      },
+    ],
     locale: "en_IN",
     type: "website",
   },
