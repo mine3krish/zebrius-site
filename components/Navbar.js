@@ -68,10 +68,10 @@ export default function Navbar() {
           }`}
         >
           <div className="flex flex-col space-y-3 pb-4">
-            {[{name: "Home", link: "#home"}, 
-            {name: "About", link: "#about"}, 
-            {name: "Services", link: "#services"}, 
-            {name: "Careers", link: "#careers"}].map((item) => (
+            {[{name: "Home", link: "/#home"}, 
+            {name: "About", link: "/#about"}, 
+            {name: "Services", link: "/#services"}, 
+            {name: "Careers", link: "/#careers"}].map((item) => (
               <Link
                 key={item.name}
                 href={item.link}
