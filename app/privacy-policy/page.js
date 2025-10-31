@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PolicyComponent from "@/components/PrivacyPolicy";
+import WebPageSchema from "@/components/SEO/WebPageSchema";
 
 export const metadata = {
   title: "Privacy Policy | Zebrius Technologies",
@@ -10,6 +11,7 @@ export const metadata = {
 export default function PrivacyPolicy() {
     return (
         <div>
+            <WebPageSchema/>
             <Navbar />
             <PolicyComponent />
             <Footer />

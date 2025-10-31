@@ -1,6 +1,7 @@
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import ContactSchema from "@/components/SEO/ContactSchema";
 
 export const metadata = {
   title: "Contact Us | Zebrius Technologies",
@@ -11,6 +12,7 @@ export const metadata = {
 export default function ContactUs() {
     return (
         <div>
+            <ContactSchema/>
             <Navbar/>
             <div className="mt-40">
                 <div className=" px-10 font-bold text-3xl text-center">Contact Us</div>

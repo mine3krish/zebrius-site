@@ -5,11 +5,13 @@ import Contact from "@/components/Contact";
 import DotGrid from "@/components/DotGrid";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import OrganizationSchema from "@/components/SEO/OrganizationSchema";
 import Services from "@/components/Services";
 
 export default function Home() {
   return (
     <div className="bg-[#18181B]">
+      <OrganizationSchema />
       <Navbar />
       <div style={{ width: '100%', height: '100vh', position: 'relative' }}>
         <DotGrid
