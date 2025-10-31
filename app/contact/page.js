@@ -4,8 +4,11 @@ import Navbar from "@/components/Navbar";
 import ContactSchema from "@/components/SEO/ContactSchema";
 
 export const metadata = {
-  title: "Contact Us | Zebrius Technologies",
-  description: "Get in touch with Zebrius Technologies for web development, app solutions, and digital transformation services. Reach out for project inquiries, support, or collaboration — we’re here to help your business grow.",
+    title: "Contact Us | Zebrius Technologies",
+    description: "Get in touch with Zebrius Technologies for web development, app solutions, and digital transformation services. Reach out for project inquiries, support, or collaboration — we’re here to help your business grow.",
+    alternates: {
+        canonical: "https://zebriustechnologies.com/contact",
+    },
 };
 
 

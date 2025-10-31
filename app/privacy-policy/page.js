@@ -4,8 +4,11 @@ import PolicyComponent from "@/components/PrivacyPolicy";
 import WebPageSchema from "@/components/SEO/WebPageSchema";
 
 export const metadata = {
-  title: "Privacy Policy | Zebrius Technologies",
-  description: "Read the Privacy Policy of Zebrius Technologies to learn how we collect, use, and protect your personal information.",
+    title: "Privacy Policy | Zebrius Technologies",
+    description: "Read the Privacy Policy of Zebrius Technologies to learn how we collect, use, and protect your personal information.",
+    alternates: {
+        canonical: "https://zebriustechnologies.com/privacy-policy",
+    },
 };
 
 export default function PrivacyPolicy() {
