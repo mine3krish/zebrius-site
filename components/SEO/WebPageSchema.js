@@ -1,3 +1,5 @@
+import Script from "next/script"
+
 export default function WebPageSchema() {
     const data = {
         "@context": "https://schema.org",
@@ -7,6 +9,6 @@ export default function WebPageSchema() {
     }
 
     return (
-        <script type="application/ld-json" dangerouslySetInnerHTML={{__html: JSON.stringify(data)}}/>
+        <Script type="application/ld-json" dangerouslySetInnerHTML={{__html: JSON.stringify(data)}}/>
     )
 }
