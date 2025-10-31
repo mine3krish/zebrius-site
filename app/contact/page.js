@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function ContactUs() {
     return (
-        <div>
+        <section>
             <ContactSchema/>
             <Navbar/>
             <div className="mt-40">
@@ -20,6 +20,6 @@ export default function ContactUs() {
             <Contact/>
             </div>
             <Footer />
-        </div>
+        </section>
     )
 }

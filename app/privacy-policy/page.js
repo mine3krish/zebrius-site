@@ -10,11 +10,11 @@ export const metadata = {
 
 export default function PrivacyPolicy() {
     return (
-        <div>
+        <section>
             <WebPageSchema/>
             <Navbar />
             <PolicyComponent />
             <Footer />
-        </div>
+        </section>
     )
 }

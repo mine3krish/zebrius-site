@@ -9,6 +9,6 @@ export default function ContactSchema() {
     }
 
     return (
-        <Script type="application/ld-json" dangerouslySetInnerHTML={{__html: JSON.stringify(data)}}/>
+        <Script type="application/ld-json" id="contact-schema" dangerouslySetInnerHTML={{__html: JSON.stringify(data)}}/>
     )
 }

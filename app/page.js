@@ -10,7 +10,7 @@ import Services from "@/components/Services";
 
 export default function Home() {
   return (
-    <div className="bg-[#18181B]">
+    <section className="bg-[#18181B]">
       <OrganizationSchema />
       <Navbar />
       <div style={{ width: '100%', height: '100vh', position: 'relative' }}>
@@ -32,6 +32,6 @@ export default function Home() {
       <Contact />
       <Footer />
       <BackToTopButton/>
-    </div>
+    </section>
   );
 }

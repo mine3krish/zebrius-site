@@ -9,6 +9,6 @@ export default function WebPageSchema() {
     }
 
     return (
-        <Script type="application/ld-json" dangerouslySetInnerHTML={{__html: JSON.stringify(data)}}/>
+        <Script id="webpage-schema" type="application/ld-json" dangerouslySetInnerHTML={{__html: JSON.stringify(data)}}/>
     )
 }
