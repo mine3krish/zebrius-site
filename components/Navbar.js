@@ -27,10 +27,10 @@ export default function Navbar() {
 
           {/* Desktop Links */}
           <div className="hidden md:flex space-x-6 items-center">
-            {[{name: "Home", link: "#home"}, 
-            {name: "About", link: "#about"}, 
-            {name: "Services", link: "#services"}, 
-            {name: "Careers", link: "#careers"}].map((item) => (
+            {[{name: "Home", link: "/#home"}, 
+            {name: "About", link: "/#about"}, 
+            {name: "Services", link: "/#services"}, 
+            {name: "Careers", link: "/#careers"}].map((item) => (
               <Link
                 key={item.name}
                 href={item.link}
