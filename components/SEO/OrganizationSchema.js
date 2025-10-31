@@ -20,6 +20,6 @@ export default function OrganizationSchema() {
     }
 
     return (
-        <Script type="application/ld-json" id="organization-schema" dangerouslySetInnerHTML={{__html: JSON.stringify(data)}}/>
+        <Script type="application/ld-json" strategy="beforeInteractive" id="organization-schema" dangerouslySetInnerHTML={{__html: JSON.stringify(data)}}/>
     )
 }
