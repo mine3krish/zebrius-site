@@ -17,9 +17,11 @@ const inter = Inter({
 export const metadata = {
   title: "Zebrius Technologies | Smart Digital Solutions",
   description:
-    "Zebrius Tech is a modern software development agency helping startups and businesses build scalable, elegant, and high-performance digital products.",
+    "Zebrius Technologies is a modern software development company helping startups and businesses build scalable, elegant, and high-performance digital products.",
   keywords: [
     "Zebrius Tech",
+    "Zebrius Technologies",
+    "Zebrius",
     "software development agency",
     "web development",
     "app development",
@@ -31,17 +33,17 @@ export const metadata = {
   publisher: "KTSHACX",
   metadataBase: new URL("https://zebriustechnologies.com"),
   openGraph: {
-    title: "Zebrius Tech | Smart Digital Solutions",
+    title: "Zebrius Technologies | Smart Digital Solutions",
     description:
       "Empowering startups and businesses with innovative web and app solutions.",
     url: "https://zebriustechnologies.com",
-    siteName: "Zebrius Tech",
+    siteName: "Zebrius Technologies",
     locale: "en_IN",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zebrius Tech | Smart Digital Solutions",
+    title: "Zebrius Technologies | Smart Digital Solutions",
     description:
       "We craft digital experiences that help your business grow faster."
   },

@@ -112,7 +112,7 @@ export default function Careers() {
             Mail us your resume:
           </p>
           <a
-            href="mailto:jobs@zebrious.tech"
+            href="mailto:hr@zebriustechnologies.com"
             className="flex items-center gap-3 bg-black text-white px-6 py-3 rounded-full shadow-md hover:bg-gray-800 transition-all duration-300"
           >
             <LucideMail className="h-6 w-6" />
